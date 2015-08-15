@@ -360,7 +360,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null
-            /*roulette: {
+            roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -1186,7 +1186,7 @@
                     return true;
                 }
 
-                /*var rlJoinChat = basicBot.chat.roulettejoin;
+                var rlJoinChat = basicBot.chat.roulettejoin;
                 var rlLeaveChat = basicBot.chat.rouletteleave;
 
                 var joinedroulette = rlJoinChat.split('%%NAME%%');
@@ -2322,7 +2322,7 @@
                 }
             },
 
-            /*joinCommand: {
+            joinCommand: {
                 command: 'join',
                 rank: 'user',
                 type: 'exact',
@@ -2451,7 +2451,7 @@
                 }
             },
 
-            /*leaveCommand: {
+            leaveCommand: {
                 command: 'leave',
                 rank: 'user',
                 type: 'exact',
@@ -2936,7 +2936,7 @@
                 }
             },
 
-            /*rouletteCommand: {
+            rouletteCommand: {
                 command: 'roulette',
                 rank: 'mod',
                 type: 'exact',
@@ -3644,3 +3644,4 @@
 
     loadChat(basicBot.startup);
 }).call(this);
+r
