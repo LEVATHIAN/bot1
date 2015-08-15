@@ -360,7 +360,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null
-            roulette: {
+             roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
