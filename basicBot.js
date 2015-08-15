@@ -1199,7 +1199,7 @@
                 if ((msg.indexOf(joinedroulette) > -1 || msg.indexOf(leftroulette) > -1) && chat.uid === basicBot.loggedInID) {
                     setTimeout(function (id) {
                         API.moderateDeleteChat(id);
-                    }, 5 * 1000, chat.cid);
+                    }, 100 * 1000, chat.cid);
                     return true;
                 }
                 return false;
