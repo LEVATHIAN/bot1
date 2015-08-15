@@ -1,16 +1,16 @@
-
- *Copyright 2015 Levathian
+/**
+ *Copyright 2014 Yemasthui
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
- 
+ */
 
 
 (function () {
 
-    window.onerror = function() {
+    /*window.onerror = function() {
         var room = JSON.parse(localStorage.getItem("basicBotRoom"));
         window.location = 'https://plug.dj' + room.name;
-    };
+    };*/
 
     API.getWaitListPosition = function(id){
         if(typeof id === 'undefined' || id === null){
@@ -99,7 +99,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/Levathian/basicBot/master/lang/langIndex.json", function (json) {
+        $.get("https://rawgit.com/Yemasthui/basicBot/master/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -231,7 +231,7 @@
         return str;
     };
 
-    var botCreator = "Matthew (Levathian)";
+    var botCreator = "Matthew (Yemasthui)";
     var botMaintainer = "Benzi"
     var botCreatorIDs = ["3851534", "4105209"];
 
@@ -240,9 +240,9 @@
         status: false,
         name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/Levathian/basicBot/master/basicBot.js",
+        scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/Levathian/basicBot/master/lang/en.json",
+        chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -250,8 +250,8 @@
         settings: {
             botName: "basicBot",
             language: "english",
-            chatLink: "https://rawgit.com/Levathian/basicBot/master/lang/en.json",
-            scriptLink: "https://rawgit.com/Levathian/basicBot/master/basicBot.js",
+            chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+            scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -307,9 +307,9 @@
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Levathian/basicBot-customization/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/Levathian/basicBot-customization/master/blacklists/OPlist.json",
-                BANNED: "https://rawgit.com/Levathian/basicBot-customization/master/blacklists/BANNEDlist.json"
+                NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/NSFWlist.json",
+                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/OPlist.json",
+                BANNED: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -360,7 +360,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null
-            roulette: {
+            /*roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -384,7 +384,7 @@
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            }
+            }*/
         },
         User: function (id, name) {
             this.id = id;
@@ -1166,7 +1166,7 @@
                 if (basicBot.settings.cmdDeletion && msg.startsWith(basicBot.settings.commandLiteral)) {
                     API.moderateDeleteChat(chat.cid);
                 }
-                
+                /**
                  var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
                     if (perm === 0) {
@@ -1175,7 +1175,7 @@
                         return true;
                     }
                 }
-                 
+                 **/
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
                     API.sendChat(subChat(basicBot.chat.adfly, {name: chat.un}));
@@ -1186,7 +1186,7 @@
                     return true;
                 }
 
-                var rlJoinChat = basicBot.chat.roulettejoin;
+                /*var rlJoinChat = basicBot.chat.roulettejoin;
                 var rlLeaveChat = basicBot.chat.rouletteleave;
 
                 var joinedroulette = rlJoinChat.split('%%NAME%%');
@@ -1202,7 +1202,7 @@
                         API.moderateDeleteChat(id);
                     }, 5 * 1000, chat.cid);
                     return true;
-                }
+                }*/
                 return false;
             },
             commandCheck: function (chat) {
@@ -1254,9 +1254,9 @@
                     }, basicBot.settings.commandCooldown * 1000);
                 }
                 if (executed) {
-                    if (basicBot.settings.cmdDeletion) {
+                    /*if (basicBot.settings.cmdDeletion) {
                         API.moderateDeleteChat(chat.cid);
-                    }
+                    }*/
 
                     //basicBot.room.allcommand = false;
                     //setTimeout(function () {
@@ -1482,7 +1482,7 @@
                 return perm >= minPerm;
 
             },
-            
+            /**
              command: {
                         command: 'cmd',
                         rank: 'user/bouncer/mod/manager',
@@ -1495,7 +1495,7 @@
                                 }
                         }
                 },
-             
+             **/
 
             activeCommand: {
                 command: 'active',
@@ -2021,7 +2021,7 @@
                 }
             },
 
-            deletechatCommand: {
+            /*deletechatCommand: {
                 command: 'deletechat',
                 rank: 'mod',
                 type: 'startsWith',
@@ -2063,7 +2063,7 @@
                         API.sendChat(subChat(basicBot.chat.deletechat, {name: chat.un, username: name}));
                     }
                 }
-            },
+            },*/
 
             emojiCommand: {
                 command: 'emoji',
@@ -2322,7 +2322,7 @@
                 }
             },
 
-            joinCommand: {
+            /*joinCommand: {
                 command: 'join',
                 rank: 'user',
                 type: 'exact',
@@ -2336,7 +2336,7 @@
                         }
                     }
                 }
-            },
+            },*/
 
             jointimeCommand: {
                 command: 'jointime',
@@ -2435,7 +2435,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(basicBot.chat.currentlang, {language: basicBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/Levathian/basicBot/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/Yemasthui/basicBot/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
@@ -2451,7 +2451,7 @@
                 }
             },
 
-            leaveCommand: {
+            /*leaveCommand: {
                 command: 'leave',
                 rank: 'user',
                 type: 'exact',
@@ -2466,7 +2466,7 @@
                         }
                     }
                 }
-            },
+            },*/
 
             linkCommand: {
                 command: 'link',
@@ -2759,7 +2759,7 @@
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            
+                            /*
                              basicBot.room.mutedUsers.push(user.id);
                              if (time === null) API.sendChat(subChat(basicBot.chat.mutednotime, {name: chat.un, username: name}));
                              else {
@@ -2782,7 +2782,7 @@
                              }
                              }, time * 60 * 1000, user.id);
                              }
-                             
+                             */
                             if (time > 45) {
                                 API.sendChat(subChat(basicBot.chat.mutedmaxtime, {name: chat.un, time: "45"}));
                                 API.moderateMuteUser(user.id, 1, API.MUTE.LONG);
@@ -2936,7 +2936,7 @@
                 }
             },
 
-            rouletteCommand: {
+            /*rouletteCommand: {
                 command: 'roulette',
                 rank: 'mod',
                 type: 'exact',
@@ -2949,7 +2949,7 @@
                         }
                     }
                 }
-            },
+            },*/
 
             rulesCommand: {
                 command: 'rules',
@@ -3161,7 +3161,7 @@
                         var since = basicBot.roomUtilities.msToStr(durationOnline);
                         msg += subChat(basicBot.chat.activefor, {time: since});
 
-                        
+                        /*
                         // least efficient way to go about this, but it works :)
                         if (msg.length > 256){
                             firstpart = msg.substr(0, 256);
@@ -3174,7 +3174,7 @@
                         else {
                             API.sendChat(msg);
                         }
-                        
+                        */
 
                         // This is a more efficient solution
                         if (msg.length > 241){
@@ -3387,7 +3387,7 @@
                     else {
                         var msg = chat.message;
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
-                        
+                        /**
                          if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
                             if (permFrom > 2) {
                                 basicBot.room.mutedUsers = [];
@@ -3395,7 +3395,7 @@
                             }
                             else return API.sendChat(subChat(basicBot.chat.unmuteeveryonerank, {name: chat.un}));
                         }
-                         
+                         **/
                         var from = chat.un;
                         var name = msg.substr(cmd.length + 2);
 
@@ -3405,7 +3405,7 @@
 
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            
+                            /*
                              var muted = basicBot.room.mutedUsers;
                              var wasMuted = false;
                              var indexMuted = -1;
@@ -3419,7 +3419,7 @@
                              if (!wasMuted) return API.sendChat(subChat(basicBot.chat.notmuted, {name: chat.un}));
                              basicBot.room.mutedUsers.splice(indexMuted);
                              API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
-                             
+                             */
                             try {
                                 API.moderateUnmuteUser(user.id);
                                 API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
