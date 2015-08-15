@@ -1,4 +1,4 @@
-/**
+
  *Copyright 2014 Yemasthui
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
@@ -7,7 +7,7 @@
 
 (function () {
 
-    /*window.onerror = function() {
+    window.onerror = function() {
         var room = JSON.parse(localStorage.getItem("basicBotRoom"));
         window.location = 'https://plug.dj' + room.name;
     };*/
@@ -360,7 +360,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null
-            /*roulette: {
+            roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -1166,7 +1166,7 @@
                 if (basicBot.settings.cmdDeletion && msg.startsWith(basicBot.settings.commandLiteral)) {
                     API.moderateDeleteChat(chat.cid);
                 }
-                /**
+                
                  var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
                     if (perm === 0) {
@@ -1186,7 +1186,7 @@
                     return true;
                 }
 
-                /*var rlJoinChat = basicBot.chat.roulettejoin;
+                var rlJoinChat = basicBot.chat.roulettejoin;
                 var rlLeaveChat = basicBot.chat.rouletteleave;
 
                 var joinedroulette = rlJoinChat.split('%%NAME%%');
@@ -1254,7 +1254,7 @@
                     }, basicBot.settings.commandCooldown * 1000);
                 }
                 if (executed) {
-                    /*if (basicBot.settings.cmdDeletion) {
+                    if (basicBot.settings.cmdDeletion) {
                         API.moderateDeleteChat(chat.cid);
                     }*/
 
@@ -1482,7 +1482,7 @@
                 return perm >= minPerm;
 
             },
-            /**
+            
              command: {
                         command: 'cmd',
                         rank: 'user/bouncer/mod/manager',
@@ -2021,7 +2021,7 @@
                 }
             },
 
-            /*deletechatCommand: {
+            deletechatCommand: {
                 command: 'deletechat',
                 rank: 'mod',
                 type: 'startsWith',
@@ -2322,7 +2322,7 @@
                 }
             },
 
-            /*joinCommand: {
+            joinCommand: {
                 command: 'join',
                 rank: 'user',
                 type: 'exact',
@@ -2451,7 +2451,7 @@
                 }
             },
 
-            /*leaveCommand: {
+            leaveCommand: {
                 command: 'leave',
                 rank: 'user',
                 type: 'exact',
@@ -2759,7 +2759,7 @@
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            /*
+                            
                              basicBot.room.mutedUsers.push(user.id);
                              if (time === null) API.sendChat(subChat(basicBot.chat.mutednotime, {name: chat.un, username: name}));
                              else {
@@ -2936,7 +2936,7 @@
                 }
             },
 
-            /*rouletteCommand: {
+            rouletteCommand: {
                 command: 'roulette',
                 rank: 'mod',
                 type: 'exact',
@@ -3161,7 +3161,7 @@
                         var since = basicBot.roomUtilities.msToStr(durationOnline);
                         msg += subChat(basicBot.chat.activefor, {time: since});
 
-                        /*
+                        
                         // least efficient way to go about this, but it works :)
                         if (msg.length > 256){
                             firstpart = msg.substr(0, 256);
@@ -3387,7 +3387,7 @@
                     else {
                         var msg = chat.message;
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
-                        /**
+                        
                          if (msg.indexOf('@') === -1 && msg.indexOf('all') !== -1) {
                             if (permFrom > 2) {
                                 basicBot.room.mutedUsers = [];
@@ -3405,7 +3405,7 @@
 
                         var permUser = basicBot.userUtilities.getPermission(user.id);
                         if (permFrom > permUser) {
-                            /*
+                            
                              var muted = basicBot.room.mutedUsers;
                              var wasMuted = false;
                              var indexMuted = -1;
