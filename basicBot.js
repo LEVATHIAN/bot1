@@ -1590,7 +1590,7 @@
                             basicBot.settings.afkRemoval = !basicBot.settings.afkRemoval;
                             basicBot.room.afkInterval = setInterval(function () {
                                 basicBot.roomUtilities.afkCheck()
-                            }, 2 * 1000);
+                            }, 200 * 1000);
                             API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.afkremoval}));
                         }
                     }
