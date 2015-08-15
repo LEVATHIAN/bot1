@@ -2,7 +2,7 @@
  *Copyright 2014 Yemasthui
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
- */
+ 
 
 
 (function () {
@@ -10,7 +10,7 @@
     window.onerror = function() {
         var room = JSON.parse(localStorage.getItem("basicBotRoom"));
         window.location = 'https://plug.dj' + room.name;
-    };*/
+    };
 
     API.getWaitListPosition = function(id){
         if(typeof id === 'undefined' || id === null){
@@ -384,7 +384,7 @@
                         basicBot.userUtilities.moveUser(winner, pos, false);
                     }, 1 * 1000, winner, pos);
                 }
-            }*/
+            }
         },
         User: function (id, name) {
             this.id = id;
@@ -1175,7 +1175,7 @@
                         return true;
                     }
                 }
-                 **/
+                 
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
                     API.sendChat(subChat(basicBot.chat.adfly, {name: chat.un}));
@@ -1202,7 +1202,7 @@
                         API.moderateDeleteChat(id);
                     }, 5 * 1000, chat.cid);
                     return true;
-                }*/
+                }
                 return false;
             },
             commandCheck: function (chat) {
@@ -1256,7 +1256,7 @@
                 if (executed) {
                     if (basicBot.settings.cmdDeletion) {
                         API.moderateDeleteChat(chat.cid);
-                    }*/
+                    }
 
                     //basicBot.room.allcommand = false;
                     //setTimeout(function () {
@@ -1495,7 +1495,7 @@
                                 }
                         }
                 },
-             **/
+             
 
             activeCommand: {
                 command: 'active',
@@ -2063,7 +2063,7 @@
                         API.sendChat(subChat(basicBot.chat.deletechat, {name: chat.un, username: name}));
                     }
                 }
-            },*/
+            },
 
             emojiCommand: {
                 command: 'emoji',
@@ -2336,7 +2336,7 @@
                         }
                     }
                 }
-            },*/
+            },
 
             jointimeCommand: {
                 command: 'jointime',
@@ -2466,7 +2466,7 @@
                         }
                     }
                 }
-            },*/
+            },
 
             linkCommand: {
                 command: 'link',
@@ -2782,7 +2782,7 @@
                              }
                              }, time * 60 * 1000, user.id);
                              }
-                             */
+                             
                             if (time > 45) {
                                 API.sendChat(subChat(basicBot.chat.mutedmaxtime, {name: chat.un, time: "45"}));
                                 API.moderateMuteUser(user.id, 1, API.MUTE.LONG);
@@ -2949,7 +2949,7 @@
                         }
                     }
                 }
-            },*/
+            },
 
             rulesCommand: {
                 command: 'rules',
@@ -3174,7 +3174,7 @@
                         else {
                             API.sendChat(msg);
                         }
-                        */
+                        
 
                         // This is a more efficient solution
                         if (msg.length > 241){
@@ -3395,7 +3395,7 @@
                             }
                             else return API.sendChat(subChat(basicBot.chat.unmuteeveryonerank, {name: chat.un}));
                         }
-                         **/
+                         
                         var from = chat.un;
                         var name = msg.substr(cmd.length + 2);
 
@@ -3419,7 +3419,7 @@
                              if (!wasMuted) return API.sendChat(subChat(basicBot.chat.notmuted, {name: chat.un}));
                              basicBot.room.mutedUsers.splice(indexMuted);
                              API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
-                             */
+                             
                             try {
                                 API.moderateUnmuteUser(user.id);
                                 API.sendChat(subChat(basicBot.chat.unmuted, {name: chat.un, username: name}));
