@@ -253,11 +253,11 @@
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
             scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
             roomLock: false, // Requires an extension to re-load the script
-            startupCap: 1, // 1-200
+            startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
-            autowoot: true,
-            autoskip: false,
+            autowoot: false,
+            autoskip: true,
             smartSkip: true,
             cmdDeletion: true,
             maximumAfk: 120,
@@ -270,11 +270,11 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: false,
+            voteSkip: 4,
             voteSkipLimit: 10,
             historySkip: false,
             timeGuard: true,
-            maximumSongLength: 10,
+            maximumSongLength: 5,
             autodisable: true,
             commandCooldown: 30,
             usercommandsEnabled: true,
@@ -358,9 +358,9 @@
             blacklists: {
 
             },
-            newBlacklisted: [],
+            /*newBlacklisted: [],
             newBlacklistedSongFunction: null
-        },
+            }*/
             roulette: {
                 rouletteStatus: false,
                 participants: [],
