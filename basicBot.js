@@ -360,7 +360,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null
-        }
+        },
             roulette: {
                 rouletteStatus: false,
                 participants: [],
