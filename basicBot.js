@@ -301,16 +301,16 @@
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: "https://nulled.io",
+            website: "https://www.nulled.io/",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
-            blacklists: {
+            /*blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/NSFWlist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/OPlist.json",
                 BANNED: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/BANNEDlist.json"
-            }
+            }*/
         },
         room: {
             name: null,
@@ -358,16 +358,18 @@
             blacklists: {
 
             },
-           
+            newBlacklisted: [],
+            newBlacklistedSongFunction: null
+        }
             roulette: {
-            rouletteStatus: false,
+                rouletteStatus: false,
                 participants: [],
                 countdown: null,
                 startRoulette: function () {
                     basicBot.room.roulette.rouletteStatus = true;
                     basicBot.room.roulette.countdown = setTimeout(function () {
                         basicBot.room.roulette.endRoulette();
-                    }, 200 * 1000);
+                    }, 60 * 1000);
                     API.sendChat(basicBot.chat.isopen);
                 },
                 endRoulette: function () {
@@ -1199,7 +1201,7 @@
                 if ((msg.indexOf(joinedroulette) > -1 || msg.indexOf(leftroulette) > -1) && chat.uid === basicBot.loggedInID) {
                     setTimeout(function (id) {
                         API.moderateDeleteChat(id);
-                    }, 100 * 1000, chat.cid);
+                    }, 200 * 1000, chat.cid);
                     return true;
                 }
                 return false;
@@ -1590,7 +1592,7 @@
                             basicBot.settings.afkRemoval = !basicBot.settings.afkRemoval;
                             basicBot.room.afkInterval = setInterval(function () {
                                 basicBot.roomUtilities.afkCheck()
-                            }, 200 * 1000);
+                            }, 2 * 1000);
                             API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.afkremoval}));
                         }
                     }
