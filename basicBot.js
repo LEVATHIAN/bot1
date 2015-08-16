@@ -301,7 +301,7 @@
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: null,
+            website: "https://nulled.io",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
