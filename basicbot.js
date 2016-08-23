@@ -99,7 +99,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/NulledBot/source/master/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/lang/langIndex.json", function (json) {
             var link = NulledBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -240,9 +240,9 @@
         status: false,
         name: "NulledBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/NulledBot/source/master/NulledBot.js",
+        scriptLink: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/NulledBot.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/NulledBot/source/master/lang/en.json",
+        chatLink: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -250,8 +250,8 @@
         settings: {
             botName: "NulledBot",
             language: "english",
-            chatLink: "https://rawgit.com/NulledBot/source/master/lang/en.json",
-            scriptLink: "https://rawgit.com/NulledBot/source/master/NulledBot.js",
+            chatLink: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/lang/en.json",
+            scriptLink: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/NulledBot.js",
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -309,9 +309,9 @@
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/NulledBot/custom/master/blacklists/NSFWlist.json",
-                OP: "https://rawgit.com/NulledBot/custom/master/blacklists/OPlist.json",
-                BANNED: "https://rawgit.com/NulledBot/custom/master/blacklists/BANNEDlist.json"
+                NSFW: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/custom/master/blacklists/NSFWlist.json",
+                OP: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/custom/master/blacklists/OPlist.json",
+                BANNED: "https://cdn.rawgit.com/LEVATHIAN/bot1/master/custom/master/blacklists/BANNEDlist.json"
             }
         },
         room: {
@@ -2490,7 +2490,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(NulledBot.chat.currentlang, {language: NulledBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/NulledBot/source/master/lang/langIndex.json", function (json) {
+                        $.get("https://cdn.rawgit.com/LEVATHIAN/bot1/master/source/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
