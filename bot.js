@@ -1926,7 +1926,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!NulledBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(subChat(NulledBot.chat.commandslink, {botname: NulledBot.settings.botName, link: NulledBot.cmdLink}));
+                        API.sendChat(subChat(NulledBot.chat.commandslink, {botname: NulledBot.settings.botName, link: https://github.com/LEVATHIAN/bot1/blob/master/commands.md}));
                     }
                 }
             },
